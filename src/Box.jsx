@@ -30,20 +30,23 @@ const Box = ({ color }) => {
 
   useFrame(
     (state, delta) => {
-      time.current += delta * 1.2;
-      let newZ = position.z - (time.current);
 
-      if(newZ < -10) {
-        resetPosition();
-        time.current = 0;
-      }
+    // // Make the box move from Z
+    //   time.current += delta * 1.2;
+    //   let newZ = position.z - (time.current);
 
-    // Make the box move from Z
+    //   if(newZ < -10) {
+    //     resetPosition();
+    //     time.current = 0;
+    //   }
+
     //   box.current.position.set(
     //     position.x, 
     //     position.y, 
     //     newZ, 
     //   )
+    box.current.position.set(position.x, position.y, position.z)
+
       // delta is how long it is past before the last render
       box.current.rotation.x += delta * xRotSpeed;
       box.current.rotation.y += delta * yRotSpeed;

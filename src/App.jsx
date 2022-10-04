@@ -11,8 +11,15 @@ import Ground from "./Ground";
 import Guitar from "./Guitar";
 import Rings from "./Rings";
 import Boxes from './Box';
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+  ChromaticAberration,
+} from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 
-function CarShow() {
+const CarShow = () => {
   return (
     <Fragment>
       <OrbitControls target={[0, 1.3, 0]} maxPolarAngle={1.45} />
@@ -50,6 +57,25 @@ function CarShow() {
         shadow-bias={-0.0001}
       />
       <Ground />
+
+      <EffectComposer>
+        {/* Make the scene and models more blur when you move back with the camera */}
+        {/* <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={3} height={480} /> */}
+        <Bloom
+          blendFunction={BlendFunction.ADD}
+          intensity={2.3} // The bloom intensity.
+          width={300} // render width
+          height={300} // render height
+          kernelSize={5} // blur kernel size
+          luminanceThreshold={0.8} // luminance threshold. Raise this value to mask out darker elements in the scene.
+          luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
+        />
+        <ChromaticAberration
+          blendFunction={BlendFunction.NORMAL} // blend mode
+          offset={[0.0005, 0.0012]} // color offset
+        />
+      </EffectComposer>
+
     </Fragment>
   );
 }
