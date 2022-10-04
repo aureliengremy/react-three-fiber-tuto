@@ -1,33 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import { Fragment, Suspense, useState } from 'react'
 import './App.css'
+import Ground from './Ground'
+
+function CarShow() {
+  return (
+    <Fragment>
+      <OrbitControls target={[0,0.35,0]} maxPolarAngle={1.45}/>
+      <PerspectiveCamera makeDefault fov={50} position={[3,2,5]}/>
+      <color args={[0,0,0]} attach="background"/>
+
+      <spotLight
+        color={[1, 0.25, 0.7]}
+        intensity={1.5}
+        angle={0.6}
+        penumbra={0.5}
+        position={[5, 5, 0]}
+        castShadow
+        shadow-bias={-0.0001}
+      />
+      <spotLight
+        color={[0.14, 0.5, 1]}
+        intensity={2}
+        angle={0.6}
+        penumbra={0.5}
+        position={[-5, 5, 0]}
+        castShadow
+        shadow-bias={-0.0001}
+      />
+      <Ground/>
+    </Fragment>
+  )
+}
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+   <Suspense fallback={null}>
+    <Canvas shadows>
+      <CarShow />
+    </Canvas>
+   </Suspense>
   )
 }
 
