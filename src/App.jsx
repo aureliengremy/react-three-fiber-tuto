@@ -22,8 +22,8 @@ import { BlendFunction } from "postprocessing";
 const CarShow = () => {
   return (
     <Fragment>
-      <OrbitControls target={[0, 1.3, 0]} maxPolarAngle={1.45} />
-      <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
+      <OrbitControls target={[0, 1.4, 0]} maxPolarAngle={1.45} />
+      <PerspectiveCamera makeDefault fov={50} position={[0, 2, 6]} />
       <color args={[0, 0, 0]} attach="background" />
 
       {/* make all the element reflect all light texture */}

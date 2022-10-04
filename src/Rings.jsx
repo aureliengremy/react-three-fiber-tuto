@@ -41,7 +41,7 @@ const Rings = () => {
                 key={i}
                 ref={(element) => (itemRef.current[i] = element)}
                 >
-                    <torusGeometry args={[3.50, 0.05, 16, 100]}/>
+                    <torusGeometry args={[3.80, 0.05, 16, 100]}/>
                     <meshStandardMaterial emissive={[0.5,0.5,0.5]} color={[0,0,0]}/>
             </mesh>
         ))}
