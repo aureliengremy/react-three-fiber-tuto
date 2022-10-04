@@ -1,0 +1,11 @@
+Model Information:
+* title:	Glassy Gibson Guitar
+* source:	https://sketchfab.com/3d-models/glassy-gibson-guitar-489c253316c3414288dab313c6a80d0c
+* author:	BlakkMato (https://sketchfab.com/BlakkMato)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Glassy Gibson Guitar" (https://sketchfab.com/3d-models/glassy-gibson-guitar-489c253316c3414288dab313c6a80d0c) by BlakkMato (https://sketchfab.com/BlakkMato) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
